@@ -5,7 +5,7 @@ FROM python:3.12-alpine
 WORKDIR /app
 
 # Install wget (or curl)
-RUN apk add --no-cache wget
+RUN apk update && apk add --no-cache wget
 
 # Download the app.py file
 RUN wget https://raw.githubusercontent.com/procrastinando/kids-math-homework/main/app.py -O /app/app.py
