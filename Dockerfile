@@ -1,4 +1,4 @@
-FROM python:3.12-alpine3.18
+FROM python:3.12-alpine
 RUN apk add --no-cache git nano
 RUN git clone https://github.com/procrastinando/kids-math-homework /app
 WORKDIR /app
