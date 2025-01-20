@@ -7,12 +7,12 @@ sudo apt install -y curl git
 curl -fsSL https://get.docker.com | sudo sh
 ```
 ### Build the image:
-- Locally: `docker build -t projects .`
+- Locally: `docker build -t math .`
 - From the repository: `docker build -t math https://github.com/procrastinando/kids-math-homework.git#main:.`
 - To update:
 ```
 docker rm -f math
-docker build --no-cache --pull -t math https://github.com/procrastinando/projects.git#main:.
+docker build --no-cache --pull -t math https://github.com/procrastinando/kids-math-homework.git#main:.
 ```
 ### Option 1: Run by command:
 ```
