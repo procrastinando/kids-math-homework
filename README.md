@@ -5,6 +5,11 @@ A simple mathematic homework for kids using gradio webui
 ```
 sudo apt install -y curl git
 curl -fsSL https://get.docker.com | sudo sh
+```6
+### Manual Installation:
+Place the `app.py` file in `/root/math` directory. 
+```
+docker run -d --name math --restart always --network host -v /root/math:/root/math python:3.12-alpine sh -c "tail -f /dev/null & pip install --no-cache-dir -r /root/math/requirements.txt && python /root/math/app.py"
 ```
 ### Build the image:
 - Locally: `docker build -t math .`
@@ -24,7 +29,6 @@ services:
   math:
     container_name: math
     image: math
-    ports:
-      - "666:8501"
+    network: host
     restart: unless-stopped
 ```
