@@ -69,18 +69,3 @@ services:
       - "666:666"
     restart: unless-stopped
 ```
-
-### Usage
-
-1. Build and start the service:
-   ```bash
-docker-compose up -d --build
-   ```
-2. View logs:
-   ```bash
-docker-compose logs -f julia-app
-   ```
-3. Stop the service:
-   ```bash
-docker-compose down
-   ```
