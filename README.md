@@ -30,7 +30,7 @@ docker build -t julia https://github.com/procrastinando/kids-math-homework.git#m
 Once built, you can launch the container:
 
 ```bash
-docker run -d --name julia_container -p 666:666 julia
+docker run -d --name julia_homework -p 666:666 julia
 ```
 
 - `-p 666:666` maps port 666 of the container to port 666 on the host.
@@ -43,10 +43,10 @@ When you push updates to the `main` branch, rebuild and redeploy:
 ```bash
 docker build -t julia https://github.com/procrastinando/kids-math-homework.git#main:.
 
-docker stop julia_container || true
-docker rm julia_container  || true
+docker stop julia_homework || true
+docker rm julia_homework  || true
 
-docker run -d --name julia_container -p 666:666 julia
+docker run -d --name julia_homework -p 666:666 julia
 ```
 
 1. **Rebuild** the image from the updated repository.
@@ -62,7 +62,7 @@ To streamline container deployment, you can use Docker Compose. Create a file na
 services:
   julia-app:
     image: julia
-    container_name: julia_container
+    container_name: julia_homework
     build:
       context: .
       dockerfile: Dockerfile
